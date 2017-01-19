@@ -10,4 +10,6 @@ var options = {
    cert : fs.readFileSync('server.crt')
 };
 
-app.listen(process.env.PORT || 80);
+https.createServer(options, app).listen(80, function () {
+   console.log('Started!');
+});
